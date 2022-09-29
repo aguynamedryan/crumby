@@ -31,6 +31,10 @@ module Crumby
 
   class MyApp < Sinatra::Base
     get '/' do
+      return "I'm here"
+    end
+
+    get '/record' do
       case Passer.new(params["url"]).pass_it_on
       when 0
         return 200
